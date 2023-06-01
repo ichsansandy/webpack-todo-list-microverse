@@ -1,0 +1,28 @@
+{
+  "name": "webpack-todo-list-microverse",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichsansandy/webpack-todo-list-microverse.git"
+  },
+  "author": "ichsansandy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ichsansandy/webpack-todo-list-microverse/issues"
+  },
+  "homepage": "https://github.com/ichsansandy/webpack-todo-list-microverse#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
