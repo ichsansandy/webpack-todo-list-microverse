@@ -1,6 +1,9 @@
 import './style.css';
+import loadTodoListCard from './modules/loadTodoListCard.js';
+import updateCompleted from './modules/updateCompleted';
+import savingData from './modules/savingData';
 
-const todoList = [
+let todoList = [
   {
     description: 'Hello There',
     completed: false,
@@ -16,23 +19,44 @@ const todoList = [
     completed: false,
     index: 2,
   },
+  {
+    description: 'Getting A Job Better And Higher Salary',
+    completed: false,
+    index: 4,
+  },
 ];
+
+// checked local storage
+const savedData = JSON.parse(localStorage.getItem('todolist'));
+
+if (savedData) {
+  todoList = savedData;
+}
 
 //  sort based in index
 todoList.sort((a, b) => a.index - b.index);
 
-function loopTodoElement(item) {
-  return item.completed === false
-    ? `<li class="wrapper">
-        <span class="list"><input class="checkbox" type="checkbox" />${item.description}</span>
-        <span><i class="icon fas fa-grip-vertical"></i></span>
-    </li>`
-    : `<li class="wrapper">
-        <span class="list"><input class="checkbox" type="checkbox" checked />${item.description}</span>
-        <span><i class="icon fas fa-grip-vertical"></i></span>
-    </li>`;
-}
+//  render to html
+loadTodoListCard(todoList);
 
-const listContainer = document.querySelector('.list-container');
+// update array if checkbox checked
 
-listContainer.innerHTML = todoList.map((list) => loopTodoElement(list)).join('');
+const checkboxes = document.querySelectorAll('.checkbox');
+
+checkboxes.forEach((box) => {
+  box.addEventListener('change', () => {
+    const id = Number(box.getAttribute('data-id'));
+    updateCompleted(id, todoList);
+    savingData(todoList);
+  });
+});
+
+// clear all completed
+
+const clearAllCompleted = document.querySelector('#clear-completed');
+
+clearAllCompleted.addEventListener('click', () => {
+  todoList = todoList.filter((list) => list.completed !== true);
+  savingData(todoList);
+  loadTodoListCard(todoList);
+});
