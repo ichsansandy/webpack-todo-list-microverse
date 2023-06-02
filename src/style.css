@@ -1,3 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+:root {
+  --primary-color: #f0edd4;
+  --secondary-color: #f9fbe7;
+  --dark-color: #7d1515;
+  --highlight-color: #fea1a1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--dark-color);
+  font-family: 'Prompt', sans-serif;
+}
+
 body {
-  background-color: bisque;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--primary-color);
+  padding: 5px 20px;
+}
+
+.container {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  padding: 20px 35px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.wrapper:hover {
+  outline: 1px solid var(--highlight-color);
+}
+
+.button {
+  justify-content: center;
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+.button:hover {
+  background-color: var(--dark-color);
+  cursor: pointer;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  margin-right: 12px;
+}
+
+#task-input {
+  background-color: transparent;
+  font-style: italic;
+}
+
+#task-input:focus {
+  outline: none;
+}
+
+.icon {
+  color: var(--dark-color);
 }
