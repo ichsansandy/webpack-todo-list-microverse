@@ -20,6 +20,7 @@ body {
   height: 100vh;
   background-color: var(--primary-color);
   padding: 5px 20px;
+  user-select: none;
 }
 
 .container {
@@ -63,6 +64,10 @@ body {
   margin-right: 12px;
 }
 
+.task-item {
+  cursor: grab;
+}
+
 #task-input {
   background-color: transparent;
   font-style: italic;
@@ -74,4 +79,9 @@ body {
 
 .icon {
   color: var(--dark-color);
+}
+
+.dragging{
+  opacity: 0.5;
+  cursor: grabbing;
 }

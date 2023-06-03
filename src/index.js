@@ -1,7 +1,6 @@
 import './style.css';
 import loadTodoListCard from './modules/loadTodoListCard.js';
-import updateCompleted from './modules/updateCompleted';
-import savingData from './modules/savingData';
+import savingData from './modules/savingData.js';
 
 let todoList = [
   {
@@ -33,23 +32,8 @@ if (savedData) {
   todoList = savedData;
 }
 
-//  sort based in index
-todoList.sort((a, b) => a.index - b.index);
-
 //  render to html
 loadTodoListCard(todoList);
-
-// update array if checkbox checked
-
-const checkboxes = document.querySelectorAll('.checkbox');
-
-checkboxes.forEach((box) => {
-  box.addEventListener('change', () => {
-    const id = Number(box.getAttribute('data-id'));
-    updateCompleted(id, todoList);
-    savingData(todoList);
-  });
-});
 
 // clear all completed
 
