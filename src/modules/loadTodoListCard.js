@@ -1,5 +1,6 @@
 import savingData from './savingData.js';
 import updateCompleted from './updateCompleted.js';
+import reorder from './reorderArrayBasedOnIndex.js';
 
 export default function loadTodoListCard(arrayTodoList) {
   function loopTodoElement(item) {
@@ -8,9 +9,6 @@ export default function loadTodoListCard(arrayTodoList) {
                 <span><i class="icon fas fa-grip-vertical"></i></span>
             </li>`;
   }
-
-  //  sort based in index
-  // arrayTodoList.sort((a, b) => a.index - b.index);
 
   const listContainer = document.querySelector('.list-container');
 
@@ -24,22 +22,6 @@ export default function loadTodoListCard(arrayTodoList) {
       }, 0);
     });
 
-    function reorder(arr, index, n) {
-      const temp = [...Array(n)];
-
-      // arr[i] should be present at index[i] index
-      for (let i = 0; i < n; i += 1) {
-        temp[i] = arr[index[i]];
-      }
-
-      // Copy temp[] to arr[]
-      for (let i = 0; i < n; i += 1) {
-        arr[i] = temp[i];
-        arr[i].index = i + 1;
-      }
-      savingData(arr);
-    }
-
     task.addEventListener('dragend', () => {
       task.classList.remove('dragging');
       const taskList = document.querySelectorAll('.task-item');
@@ -48,6 +30,7 @@ export default function loadTodoListCard(arrayTodoList) {
         index.push(Number(task.id) - 1);
       });
       reorder(arrayTodoList, index, arrayTodoList.length);
+      savingData(arrayTodoList);
       loadTodoListCard(arrayTodoList);
     });
 
@@ -74,6 +57,4 @@ export default function loadTodoListCard(arrayTodoList) {
       savingData(arrayTodoList);
     });
   });
-
-  console.log(arrayTodoList);
 }

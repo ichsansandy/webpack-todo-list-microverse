@@ -1,6 +1,7 @@
 import './style.css';
 import loadTodoListCard from './modules/loadTodoListCard.js';
 import savingData from './modules/savingData.js';
+import setFavicons from './modules/addingFavico.js';
 
 let todoList = [
   {
@@ -36,7 +37,6 @@ if (savedData) {
 loadTodoListCard(todoList);
 
 // clear all completed
-
 const clearAllCompleted = document.querySelector('#clear-completed');
 
 clearAllCompleted.addEventListener('click', () => {
@@ -44,3 +44,5 @@ clearAllCompleted.addEventListener('click', () => {
   savingData(todoList);
   loadTodoListCard(todoList);
 });
+
+setFavicons('https://cdn-icons-png.flaticon.com/512/1024/1024824.png');
