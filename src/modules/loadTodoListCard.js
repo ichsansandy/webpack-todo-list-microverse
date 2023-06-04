@@ -7,6 +7,7 @@ export default function loadTodoListCard(arrayTodoList) {
     return `<li id="${item.index}" class="wrapper task-item" >
                 <span class="list ${item.completed === false ? '' : 'checked'}"><input class="checkbox" type="checkbox" data-id="${item.index}" ${item.completed === false ? '' : 'checked'} />${item.description}</span>
                 <span class="grab" draggable="true"><i class="icon fas fa-grip-vertical"></i></span>
+                <span class="hidden remove-button" data-id="${item.index}" ><i class="icon fas fa-trash"></i></span>
             </li>`;
   }
 
@@ -24,12 +25,7 @@ export default function loadTodoListCard(arrayTodoList) {
 
     task.addEventListener('dragend', () => {
       task.classList.remove('dragging');
-      const taskList = document.querySelectorAll('.task-item');
-      const index = [];
-      taskList.forEach((task) => {
-        index.push(Number(task.id) - 1);
-      });
-      reorder(arrayTodoList, index, arrayTodoList.length);
+      reorder(arrayTodoList, arrayTodoList.length);
       savingData(arrayTodoList);
       loadTodoListCard(arrayTodoList);
     });
