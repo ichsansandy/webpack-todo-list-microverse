@@ -4,9 +4,9 @@ import reorder from './reorderArrayBasedOnIndex.js';
 
 export default function loadTodoListCard(arrayTodoList) {
   function loopTodoElement(item) {
-    return `<li id="${item.index}" class="wrapper task-item" draggable="true">
-                <span class="list"><input class="checkbox" type="checkbox" data-id="${item.index}" ${item.completed === false ? '' : 'checked'} />${item.description}</span>
-                <span><i class="icon fas fa-grip-vertical"></i></span>
+    return `<li id="${item.index}" class="wrapper task-item" >
+                <span class="list ${item.completed === false ? '' : 'checked'}"><input class="checkbox" type="checkbox" data-id="${item.index}" ${item.completed === false ? '' : 'checked'} />${item.description}</span>
+                <span class="grab" draggable="true"><i class="icon fas fa-grip-vertical"></i></span>
             </li>`;
   }
 
@@ -55,6 +55,7 @@ export default function loadTodoListCard(arrayTodoList) {
       const id = Number(box.getAttribute('data-id'));
       updateCompleted(id, arrayTodoList);
       savingData(arrayTodoList);
+      loadTodoListCard(arrayTodoList);
     });
   });
 }

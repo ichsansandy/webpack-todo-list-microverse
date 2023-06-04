@@ -34,7 +34,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 17px;
-  padding: 20px 35px;
+  padding: 20px 25px;
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
@@ -64,8 +64,9 @@ body {
   margin-right: 12px;
 }
 
-.task-item {
+.grab {
   cursor: grab;
+  padding: 10px;
 }
 
 #task-input {
@@ -84,4 +85,9 @@ body {
 .dragging {
   opacity: 0.5;
   cursor: grabbing;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
 }
