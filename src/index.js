@@ -21,6 +21,10 @@ loadTodoListCard(todoList);
 const clearAllCompleted = document.querySelector('#clear-completed');
 
 clearAllCompleted.addEventListener('click', () => {
+  const savedData = JSON.parse(localStorage.getItem('todolist'));
+  if (savedData) {
+    todoList = savedData;
+  }
   todoList = todoList.filter((list) => list.completed !== true);
   reorder(todoList, todoList.length);
   savingData(todoList);
