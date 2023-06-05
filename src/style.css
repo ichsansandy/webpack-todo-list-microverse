@@ -5,6 +5,7 @@
   --secondary-color: #f9fbe7;
   --dark-color: #7d1515;
   --highlight-color: #fea1a1;
+  --font-size: 17px;
 }
 
 * {
@@ -16,10 +17,9 @@
 
 body {
   display: grid;
-  place-items: center;
-  height: 100vh;
+  justify-items: center;
   background-color: var(--primary-color);
-  padding: 5px 20px;
+  padding: 20px;
   user-select: none;
 }
 
@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 17px;
+  font-size: var(--font-size);
   padding: 20px 25px;
   width: 100%;
   max-width: 500px;
@@ -66,7 +66,6 @@ body {
 
 .grab {
   cursor: grab;
-  padding: 10px;
 }
 
 #task-input {
@@ -80,6 +79,11 @@ body {
 
 .icon {
   color: var(--dark-color);
+  padding: 10px;
+}
+
+.icon:hover {
+  color: var(--highlight-color);
 }
 
 .dragging {
@@ -90,4 +94,27 @@ body {
 .checked {
   text-decoration: line-through;
   color: gray;
+}
+
+.hidden {
+  display: none;
+  z-index: -1;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  font-size: var(--font-size);
+  height: 25px;
+  padding: 10px;
+  resize: none;
+}
+
+.input::-webkit-scrollbar {
+  width: 0;
+}
+
+.fa-trash:hover {
+  color: red;
+  cursor: pointer;
 }

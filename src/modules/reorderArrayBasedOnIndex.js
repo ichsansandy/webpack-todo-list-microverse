@@ -1,4 +1,10 @@
-export default function reorder(arr, index, n) {
+export default function reorder(arr, n) {
+  const taskList = document.querySelectorAll('.task-item');
+  const index = [];
+  taskList.forEach((task) => {
+    index.push(Number(task.id) - 1);
+  });
+
   const temp = [...Array(n)];
 
   // arr[i] should be present at index[i] index
