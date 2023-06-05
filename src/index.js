@@ -1,6 +1,9 @@
 import './style.css';
+import loadTodoListCard from './modules/loadTodoListCard.js';
+import savingData from './modules/savingData.js';
+import setFavicons from './modules/addingFavico.js';
 
-const todoList = [
+let todoList = [
   {
     description: 'Hello There',
     completed: false,
@@ -16,23 +19,30 @@ const todoList = [
     completed: false,
     index: 2,
   },
+  {
+    description: 'Getting A Job Better And Higher Salary',
+    completed: false,
+    index: 4,
+  },
 ];
 
-//  sort based in index
-todoList.sort((a, b) => a.index - b.index);
+// checked local storage
+const savedData = JSON.parse(localStorage.getItem('todolist'));
 
-function loopTodoElement(item) {
-  return item.completed === false
-    ? `<li class="wrapper">
-        <span class="list"><input class="checkbox" type="checkbox" />${item.description}</span>
-        <span><i class="icon fas fa-grip-vertical"></i></span>
-    </li>`
-    : `<li class="wrapper">
-        <span class="list"><input class="checkbox" type="checkbox" checked />${item.description}</span>
-        <span><i class="icon fas fa-grip-vertical"></i></span>
-    </li>`;
+if (savedData) {
+  todoList = savedData;
 }
 
-const listContainer = document.querySelector('.list-container');
+//  render to html
+loadTodoListCard(todoList);
 
-listContainer.innerHTML = todoList.map((list) => loopTodoElement(list)).join('');
+// clear all completed
+const clearAllCompleted = document.querySelector('#clear-completed');
+
+clearAllCompleted.addEventListener('click', () => {
+  todoList = todoList.filter((list) => list.completed !== true);
+  savingData(todoList);
+  loadTodoListCard(todoList);
+});
+
+setFavicons('https://cdn-icons-png.flaticon.com/512/1024/1024824.png');

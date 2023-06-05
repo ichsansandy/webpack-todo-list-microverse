@@ -20,6 +20,7 @@ body {
   height: 100vh;
   background-color: var(--primary-color);
   padding: 5px 20px;
+  user-select: none;
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 17px;
-  padding: 20px 35px;
+  padding: 20px 25px;
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
@@ -63,6 +64,11 @@ body {
   margin-right: 12px;
 }
 
+.grab {
+  cursor: grab;
+  padding: 10px;
+}
+
 #task-input {
   background-color: transparent;
   font-style: italic;
@@ -74,4 +80,14 @@ body {
 
 .icon {
   color: var(--dark-color);
+}
+
+.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
 }
