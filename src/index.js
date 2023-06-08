@@ -5,14 +5,7 @@ import setFavicons from './modules/addingFavico.js';
 import reorder from './modules/reorderArrayBasedOnIndex.js';
 import addNewTask from './modules/addNewTask.js';
 
-let todoList = [];
-
-// checked local storage
-const savedData = JSON.parse(localStorage.getItem('todolist'));
-
-if (savedData) {
-  todoList = savedData;
-}
+let todoList = JSON.parse(localStorage.getItem('todolist')) || [];
 
 //  render to html
 loadTodoListCard(todoList);
@@ -21,10 +14,7 @@ loadTodoListCard(todoList);
 const clearAllCompleted = document.querySelector('#clear-completed');
 
 clearAllCompleted.addEventListener('click', () => {
-  const savedData = JSON.parse(localStorage.getItem('todolist'));
-  if (savedData) {
-    todoList = savedData;
-  }
+  todoList = JSON.parse(localStorage.getItem('todolist')) || [];
   todoList = todoList.filter((list) => list.completed !== true);
   reorder(todoList, todoList.length);
   savingData(todoList);
@@ -37,11 +27,8 @@ const taskInput = document.querySelector('#task-input');
 
 taskInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    // function add the input to the array
-    const savedData = JSON.parse(localStorage.getItem('todolist'));
-    if (savedData) {
-      todoList = savedData;
-    }
+    todoList = JSON.parse(localStorage.getItem('todolist')) || [];
+
     addNewTask(taskInput.value, todoList);
     taskInput.value = '';
     savingData(todoList);
