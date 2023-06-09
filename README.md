@@ -21,6 +21,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Deployment](#deployment)
+  - [Run test](#runtest)
 - [👥 Author](#author)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -123,6 +124,16 @@ You can deploy this on your local dev server
 ```
 
 Once success it will automaticly running, you should see your application working at: http://localhost:8080/. Every change you make in js or css files now should be reflected in a browser a few seconds later.
+
+### Run Test
+
+You can run test using this command
+
+```
+    npm run test
+```
+
+This project use jest to test some function in the javascript modules
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
