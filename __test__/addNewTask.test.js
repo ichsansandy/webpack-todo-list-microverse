@@ -1,6 +1,7 @@
 import addNewTask from '../src/modules/addNewTask.js';
+import loadTodoListCard from '../src/modules/loadTodoListCard.js';
 
-const array = [
+const dummyArray = [
   {
     description: 'task 1',
     index: 1,
@@ -12,9 +13,17 @@ const array = [
     completed: false,
   },
 ];
+const simulateDOM = () => {
+  const ul = document.createElement('ul');
+  ul.className = 'list-container';
+  document.body.appendChild(ul);
+};
+
+localStorage.clear();
+simulateDOM();
 
 describe('addNewTask', () => {
-  addNewTask('task 3', array);
+  addNewTask('task 3', dummyArray);
 
   const newElement = {
     description: 'task 3',
@@ -22,13 +31,20 @@ describe('addNewTask', () => {
     completed: false,
   };
 
+  loadTodoListCard(dummyArray);
+
+  const newRenderedElement = document.getElementById(`#${newElement.index}`);
+
   test('increase the length of the array', () => {
-    expect(array.length).toBe(3);
+    expect(dummyArray.length).toBe(3);
   });
   test('add new element to last index', () => {
-    expect(array[array.length - 1]).toEqual(newElement);
+    expect(dummyArray[dummyArray.length - 1]).toEqual(newElement);
   });
   test('add new element with completed false', () => {
-    expect(array[array.length - 1].completed).toBe(false);
+    expect(dummyArray[dummyArray.length - 1].completed).toBe(false);
+  });
+  test('render the element to the list in last index', () => {
+    expect(newRenderedElement).toBeDefined();
   });
 });
