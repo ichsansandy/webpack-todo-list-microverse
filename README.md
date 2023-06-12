@@ -10,24 +10,24 @@
 
 ## 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-    - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Deployment](#deployment)
-  - [Run test](#runtest)
-- [👥 Author](#author)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📖 Webpack To Do List - Microverse Project ](#-webpack-to-do-list---microverse-project-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Deployment](#deployment)
+    - [Run Test](#run-test)
+  - [👥 Author ](#-author-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -141,11 +141,17 @@ This project use jest to test some function in the javascript modules
 
 ## 👥 Author <a name="author"></a>
 
-👤 Ichsan Sandy
+👤 **Ichsan Sandy**
 
 - GitHub: [@ichsansandy](https://github.com/ichsansandy)
 - Twitter: [@1chsansandy](https://twitter.com/1chsansandy)
 - LinkedIn: [Ichsan Sandy](https://linkedin.com/in/ichsans)
+
+👤 **Andry Narson**
+
+- GitHub: [@rbd3](https://github.com/rbd3)
+- Twitter: [@Narson321](https://twitter.com/@Narson321)
+- LinkedIn [@Andry Narson Rabedesana](https://linkedin.com/in/andry-narson-rabedesana-15b8b4248)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
