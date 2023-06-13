@@ -141,13 +141,13 @@ This project use jest to test some function in the javascript modules
 
 ## 👥 Author <a name="author"></a>
 
-👤 **Ichsan Sandy**
+👤 Ichsan Sandy
 
 - GitHub: [@ichsansandy](https://github.com/ichsansandy)
 - Twitter: [@1chsansandy](https://twitter.com/1chsansandy)
 - LinkedIn: [Ichsan Sandy](https://linkedin.com/in/ichsans)
 
-👤 **Andry Narson**
+👤 Andry Narson
 
 - GitHub: [@rbd3](https://github.com/rbd3)
 - Twitter: [@Narson321](https://twitter.com/@Narson321)
