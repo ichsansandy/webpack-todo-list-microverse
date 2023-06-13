@@ -1,5 +1,5 @@
 import clearAllCompleted from '../src/modules/clearAllCompleted.js';
-import loadTodoListCard from '../src/modules/loadTodoListCard';
+import loadTodoListCard from '../src/modules/loadTodoListCard.js';
 import savingData from '../src/modules/savingData.js';
 
 let dummyArray = [
@@ -48,5 +48,8 @@ describe('clearAllCompleted', () => {
 
   test('will remove all the completed task', () => {
     expect(dummyArray.length).toBe(1);
+  });
+  test('will not remove the not completed task', () => {
+    expect(dummyArray[0].completed).toBe(false);
   });
 });
