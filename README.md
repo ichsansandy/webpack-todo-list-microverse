@@ -147,16 +147,19 @@ This project use jest to test some function in the javascript modules
 - Twitter: [@1chsansandy](https://twitter.com/1chsansandy)
 - LinkedIn: [Ichsan Sandy](https://linkedin.com/in/ichsans)
 
+
+
 👤 **Andry Narson**
 
 - GitHub: [@rbd3](https://github.com/rbd3)
 - Twitter: [@Narson321](https://twitter.com/@Narson321)
 - LinkedIn [@Andry Narson Rabedesana](https://linkedin.com/in/andry-narson-rabedesana-15b8b4248)
 
-👤 **Andry Narson**
+👤 **Diana Beki**
 - Github: [@Github](https://github.com/DianaBeki?tab=repositories)
 - Twitter: [@Twitter](https://twitter.com/home)
 - LinkedIn: [@LinkedIn](https://www.linkedin.com/feed/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
